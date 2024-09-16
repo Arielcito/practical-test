@@ -1,4 +1,4 @@
-# Extractor de Profesionales de OSDE
+# Python Scraper OSDE
 
 Este proyecto es un script de Python que extrae información de profesionales de la salud del sitio web de OSDE (una compañía de seguros de salud en Argentina) utilizando web scraping.
 
