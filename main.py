@@ -245,7 +245,7 @@ if __name__ == "__main__":
         "localidad": "0",
         "especialidad": "810"
     }
-    print("Obteniendo profesionales adultos...")
+    print("Obteniendo profesionales para adultos...")
     profesionales_adultos = obtener_profesionales(url_base, valores_adultos)
     guardar_csv(profesionales_adultos, "profesionales_adultos.csv")
     print(f"Se han guardado {len(profesionales_adultos)} profesionales en el archivo CSV.")
@@ -256,7 +256,7 @@ if __name__ == "__main__":
         "localidad": "0",
         "especialidad": "870"
     }
-    print("Obteniendo profesionales ninos...")
+    print("Obteniendo profesionales para niños...")
     profesionales_ninos = obtener_profesionales(url_base, valores_ninios)
     guardar_csv(profesionales_ninos, "profesionales_ninos_adolescentes.csv")
     print(f"Se han guardado {len(profesionales_ninos)} profesionales en el archivo CSV.")
@@ -267,7 +267,7 @@ if __name__ == "__main__":
         "localidad": "0",
         "especialidad": "810"
     }
-    print("Obteniendo profesionales adultos zona oeste...")
+    print("Obteniendo profesionales para adultos zona oeste...")
     profesionales_adultos_zona_oeste = obtener_profesionales(url_base, valores_adultos_zona_oeste)
     guardar_csv(profesionales_adultos_zona_oeste, "profesionales_adultos_zona_oeste.csv")
     print(f"Se han guardado {len(profesionales_adultos_zona_oeste)} profesionales en el archivo CSV.")
@@ -278,7 +278,7 @@ if __name__ == "__main__":
         "localidad": "0",
         "especialidad": "810"
     }
-    print("Obteniendo profesionales adultos zona norte...")
+    print("Obteniendo profesionales para adultos zona norte...")
     profesionales_adultos_zona_norte = obtener_profesionales(url_base, valores_adultos_zona_norte)
     guardar_csv(profesionales_adultos_zona_norte, "profesionales_adultos_zona_norte.csv")
     print(f"Se han guardado {len(profesionales_adultos_zona_norte)} profesionales en el archivo CSV.")
