@@ -124,24 +124,31 @@ def cargar_todos_los_resultados(navegador):
 
 def extraer_datos_profesionales(navegador):
     try:
+        # Esperar a que la tabla se cargue
         WebDriverWait(navegador, 20).until(
             EC.presence_of_element_located((By.ID, "listadoTabla"))
         )
         
+        # Obtener el HTML de la tabla
         tabla_html = navegador.find_element(By.ID, "listadoTabla").get_attribute('outerHTML')
         
+        # Parsear el HTML con BeautifulSoup
         sopa = BeautifulSoup(tabla_html, 'html.parser')
         
         profesionales = []
         
+        # Iterar sobre cada prestador
         for prestador in sopa.find_all('tr', class_='prestadorEspecialidad'):
             nombre = prestador.find('div', class_='nombrePrestador').text.strip()
             
+            # Obtener los datos del consultorio
             consultorio = prestador.find_next_sibling('tr', class_='consultoriosPrestados')
             if consultorio:
                 direccion = consultorio.find('div', class_='direccionPrestador').text.strip()
                 localidad = consultorio.find('div', class_='localidadPrestador').text.strip()
                 telefono = consultorio.find('td', width='20%').find('div').text.strip()
+                # Quitar el prefijo "Tel:" del número de teléfono
+                telefono = telefono[4:].strip() if telefono.startswith("Tel:") else telefono
                 email = consultorio.find('td', width='20%').find_all('div')[1].text.strip()
                 
                 profesional = {
